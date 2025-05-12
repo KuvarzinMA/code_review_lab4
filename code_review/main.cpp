@@ -19,42 +19,42 @@ int main() {
     std::setlocale(LC_ALL, "Russian");
 
     try {
-        std::cout << "Ââåäèòå 3 ÔÈÎ (Ôàìèëèÿ Èìÿ Îò÷åñòâî):" << std::endl;
+        std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 3 Ð¤Ð˜Ðž (Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð˜Ð¼Ñ ÐžÑ‚Ñ‡ÐµÑÑ‚Ð²Ð¾):" << std::endl;
         Name names[3];
 
         for (int i = 0; i < 3; ++i) {
             std::string surname, first_name, patronymic;
-            std::cout << "Èìÿ " << i + 1 << ": ";
+            std::cout << "Ð˜Ð¼Ñ " << i + 1 << ": ";
             std::cin >> surname >> first_name;
             std::cin.ignore();
             std::getline(std::cin, patronymic);
             names[i] = Name(surname, first_name, patronymic);
         }
 
-        std::cout << "\nÂâåäåííûå èìåíà:" << std::endl;
+        std::cout << "\nÐ’Ð²ÐµÐ´ÐµÐ½Ð½Ñ‹Ðµ Ð¸Ð¼ÐµÐ½Ð°:" << std::endl;
         for (int i = 0; i < 3; ++i) {
-            std::cout << "Èìÿ " << i + 1 << ": ";
+            std::cout << "Ð˜Ð¼Ñ " << i + 1 << ": ";
             names[i].Print();
         }
 
-        std::cout << "\nÂâåäèòå âðåìÿ â ñåêóíäàõ: ";
+        std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ€ÐµÐ¼Ñ Ð² ÑÐµÐºÑƒÐ½Ð´Ð°Ñ…: ";
         int seconds_input;
         while (!(std::cin >> seconds_input) || seconds_input < 0) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Îøèáêà! Ââåäèòå ïîëîæèòåëüíîå ÷èñëî: ";
+            std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
         }
 
         Time time_from_seconds(seconds_input);
         time_from_seconds.Print();
 
-        std::cout << "\nÂâåäèòå âðåìÿ (÷àñû ìèíóòû ñåêóíäû): ";
+        std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ€ÐµÐ¼Ñ (Ñ‡Ð°ÑÑ‹ Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹ ÑÐµÐºÑƒÐ½Ð´Ñ‹): ";
         int hours, minutes, seconds;
         while (!(std::cin >> hours >> minutes >> seconds) ||
             hours < 0 || minutes < 0 || minutes >= 60 || seconds < 0 || seconds >= 60) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Îøèáêà! Ââåäèòå êîððåêòíîå âðåìÿ: ";
+            std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ: ";
         }
 
         Time time_from_components(hours, minutes, seconds);
@@ -63,47 +63,47 @@ int main() {
         std::vector<Employee> employees;
         std::vector<Department> departments;
 
-        std::cout << "\nÑêîëüêî ñîòðóäíèêîâ âû õîòèòå ñîçäàòü? ";
+        std::cout << "\nÐ¡ÐºÐ¾Ð»ÑŒÐºÐ¾ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ¾Ð² Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑÐ¾Ð·Ð´Ð°Ñ‚ÑŒ? ";
         int employee_count;
         while (!(std::cin >> employee_count) || employee_count <= 0) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Îøèáêà! Ââåäèòå ïîëîæèòåëüíîå ÷èñëî: ";
+            std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
         }
 
         std::cin.ignore();
         for (int i = 0; i < employee_count; ++i) {
             std::string name;
-            std::cout << "Ââåäèòå èìÿ ñîòðóäíèêà " << i + 1 << ": ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ° " << i + 1 << ": ";
             std::getline(std::cin, name);
             employees.emplace_back(name);
         }
 
-        std::cout << "\nÑêîëüêî îòäåëîâ âû õîòèòå ñîçäàòü? ";
+        std::cout << "\nÐ¡ÐºÐ¾Ð»ÑŒÐºÐ¾ Ð¾Ñ‚Ð´ÐµÐ»Ð¾Ð² Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑÐ¾Ð·Ð´Ð°Ñ‚ÑŒ? ";
         int department_count;
         while (!(std::cin >> department_count) || department_count <= 0) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Îøèáêà! Ââåäèòå ïîëîæèòåëüíîå ÷èñëî: ";
+            std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
         }
 
         std::cin.ignore();
         for (int i = 0; i < department_count; ++i) {
             std::string dept_name;
-            std::cout << "\nÍàçâàíèå îòäåëà " << i + 1 << ": ";
+            std::cout << "\nÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¾Ñ‚Ð´ÐµÐ»Ð° " << i + 1 << ": ";
             std::getline(std::cin, dept_name);
             departments.emplace_back(dept_name);
 
-            std::cout << "Âûáåðèòå íà÷àëüíèêà îòäåëà (1-" << employees.size() << "): ";
+            std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¸ÐºÐ° Ð¾Ñ‚Ð´ÐµÐ»Ð° (1-" << employees.size() << "): ";
             int head_index;
             while (!(std::cin >> head_index) || head_index < 1 || head_index > static_cast<int>(employees.size())) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Îøèáêà! Ââåäèòå êîððåêòíûé íîìåð: ";
+                std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€: ";
             }
             departments.back().SetHead(&employees[head_index - 1]);
 
-            std::cout << "Ââåäèòå íîìåðà ñîòðóäíèêîâ (÷åðåç ïðîáåë, 0 — çàâåðøèòü): ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€Ð° ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ¾Ð² (Ñ‡ÐµÑ€ÐµÐ· Ð¿Ñ€Ð¾Ð±ÐµÐ», 0 â€” Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ): ";
             std::cin.ignore();
             std::string line;
             std::getline(std::cin, line);
@@ -116,48 +116,48 @@ int main() {
             }
         }
 
-        std::cout << "\nÈíôîðìàöèÿ î ñîòðóäíèêàõ:\n";
+        std::cout << "\nÐ˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ°Ñ…:\n";
         for (const auto& employee : employees) {
             employee.Print();
         }
 
         std::cin.ignore();
         std::string search_name;
-        std::cout << "\nÂâåäèòå èìÿ ñîòðóäíèêà äëÿ ïîèñêà: ";
+        std::cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ° Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ°: ";
         std::getline(std::cin, search_name);
 
         bool found = false;
         for (const auto& employee : employees) {
             if (employee.GetName() == search_name) {
                 found = true;
-                std::cout << "Ñîòðóäíèê íàéäåí:\n";
+                std::cout << "Ð¡Ð¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸Ðº Ð½Ð°Ð¹Ð´ÐµÐ½:\n";
                 employee.Print();
 
                 const Department* department = employee.GetDepartment();
                 if (department) {
-                    std::cout << "\nÑïèñîê ñîòðóäíèêîâ îòäåëà " << department->GetName() << ":\n";
+                    std::cout << "\nÐ¡Ð¿Ð¸ÑÐ¾Ðº ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ¾Ð² Ð¾Ñ‚Ð´ÐµÐ»Ð° " << department->GetName() << ":\n";
                     for (const auto& dept_emp : department->GetEmployees()) {
                         std::cout << "- " << dept_emp->GetName() << "\n";
                     }
                 }
                 else {
-                    std::cout << "Ñîòðóäíèê íå ïðèíàäëåæèò íè ê îäíîìó îòäåëó.\n";
+                    std::cout << "Ð¡Ð¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸Ðº Ð½Ðµ Ð¿Ñ€Ð¸Ð½Ð°Ð´Ð»ÐµÐ¶Ð¸Ñ‚ Ð½Ð¸ Ðº Ð¾Ð´Ð½Ð¾Ð¼Ñƒ Ð¾Ñ‚Ð´ÐµÐ»Ñƒ.\n";
                 }
                 break;
             }
         }
 
         if (!found) {
-            std::cout << "Ñîòðóäíèê ñ èìåíåì '" << search_name << "' íå íàéäåí.\n";
+            std::cout << "Ð¡Ð¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸Ðº Ñ Ð¸Ð¼ÐµÐ½ÐµÐ¼ '" << search_name << "' Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½.\n";
         }
 
     }
     catch (const std::exception& ex) {
-        std::cerr << "Ïðîèçîøëà îøèáêà: " << ex.what() << std::endl;
+        std::cerr << "ÐŸÑ€Ð¾Ð¸Ð·Ð¾ÑˆÐ»Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ°: " << ex.what() << std::endl;
         return 1;
     }
     catch (...) {
-        std::cerr << "Íåèçâåñòíàÿ îøèáêà" << std::endl;
+        std::cerr << "ÐÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ð°Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ°" << std::endl;
         return 2;
     }
 
