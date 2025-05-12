@@ -19,15 +19,15 @@ namespace company {
     void Employee::Print() const {
         if (department_) {
             if (IsDepartmentHead()) {
-                std::cout << name_ << " íà÷àëüíèê îòäåëà " << department_->GetName() << std::endl;
+                std::cout << name_ << " Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¸Ðº Ð¾Ñ‚Ð´ÐµÐ»Ð° " << department_->GetName() << std::endl;
             }
             else {
-                std::cout << name_ << " ðàáîòàåò â îòäåëå " << department_->GetName()
-                    << ", íà÷àëüíèê êîòîðîãî " << department_->GetHead()->GetName() << std::endl;
+                std::cout << name_ << " Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚ Ð² Ð¾Ñ‚Ð´ÐµÐ»Ðµ " << department_->GetName()
+                    << ", Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¸Ðº ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ " << department_->GetHead()->GetName() << std::endl;
             }
         }
         else {
-            std::cout << name_ << " íå ïðèêðåïëåí ê îòäåëó" << std::endl;
+            std::cout << name_ << " Ð½Ðµ Ð¿Ñ€Ð¸ÐºÑ€ÐµÐ¿Ð»ÐµÐ½ Ðº Ð¾Ñ‚Ð´ÐµÐ»Ñƒ" << std::endl;
         }
     }
 
