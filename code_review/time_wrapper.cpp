@@ -36,7 +36,7 @@ namespace company {
     }
 
     void Time::Print() const {
-        std::cout << "Òåêóùåå âðåìÿ: " << GetTextFormat() << std::endl;
+        std::cout << "Ð¢ÐµÐºÑƒÑ‰ÐµÐµ Ð²Ñ€ÐµÐ¼Ñ: " << GetTextFormat() << std::endl;
     }
 
     int Time::GetCurrentHour() const {
